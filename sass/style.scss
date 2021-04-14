@@ -100,11 +100,12 @@ nav {
         padding: 15px;
         font-family: $font-text-rebmed;
         font-size: 15px;
+        cursor: pointer;
         }
     }
 }
 
-/* SPLASH */
+/* HEADER */
 
 .splash-inner {
     color: $color-text;
@@ -114,19 +115,43 @@ nav {
     background-size: cover;
     align-content: center;
     
-    a {
+    .btn {
         color: $color-text;
-        border: 1px solid $color-main;
         border-radius: 3px;
         padding: 15px 40px 25px 40px;
         text-decoration: none;
-        background-color: $color-main;
         text-transform: uppercase;
         font-size: 18px;
         font-family: $font-text-rebmed;
         word-spacing: -6px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        background-color: $color-main;
     }
 }
+
+.btn::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    content: '';
+    background-color: black;
+    opacity: 0;
+}
+
+.btn:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: .2;
+    z-index: 2;
+}
+
+
 
 .first-header {
     font-size: 35px;
@@ -142,10 +167,6 @@ nav {
     word-spacing: -1rem;
 }
 
-.btn:hover {
-    background:inherit;
-    color: $color-main;
-}
 
 /* SERVICES */
 
@@ -244,4 +265,49 @@ footer i {
 
 footer a {
     display: none;
+}
+
+@media (max-width: 1164px) {
+
+    .nav-list {
+        text-align: center;
+        padding-left: 30px;
+
+        ul {
+            margin: 5px;
+            padding: 0;
+
+          li {
+            padding: 3px;
+            font-size: 11px;
+          }
+        }
+    }
+
+    .banner {
+        padding: 5px 0 0 30px;
+    }
+
+    .splash-inner {
+
+        .first-header {
+            font-size: 15px;
+        }
+
+        .second-header {
+            font-size: 25px;
+            padding-bottom: 10px;
+            word-spacing: -10px;
+        }
+
+        .btn {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+
+    .splash {
+        padding-left: 30px;
+
+    }
 }
