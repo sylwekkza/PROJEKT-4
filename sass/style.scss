@@ -1,11 +1,13 @@
 $color-text: #fff;
 $color-main: gold;
+$color-button-hover: #000;
+$background-color-section: #f7f7f7;
 
-$font-text-reb: 'Rebelton', sans-serif;
-$font-text-reblight: 'Rebelton Light', sans-serif;
-$font-text-rebmed: 'Rebelton Medium', sans-serif;
-$font-text-thirst: 'Thirst', sans-serif;
-$font-text-lagu_sans: 'Lagu Sans', sans-serif;
+$font-main: 'Rebelton', sans-serif;
+$font-italic: 'Rebelton Light', sans-serif;
+$font-main-medium-weight: 'Rebelton Medium', sans-serif;
+$font-logo: 'Thirst', sans-serif;
+$font-italic2: 'Lagu Sans', sans-serif;
 
 /* GLOBAL */
 
@@ -38,6 +40,10 @@ $font-text-lagu_sans: 'Lagu Sans', sans-serif;
     box-sizing: border-box;
 }
 
+.row {
+    margin: 0;
+}
+
 body {
     margin: 0;
 }
@@ -48,14 +54,14 @@ body {
 }
 
 .section-title {
-    font-family: $font-text-rebmed;
+    font-family: $font-main-medium-weight;
     font-size: 35px;
     margin-bottom: 10px;
     word-spacing: -10px;
 }
 
 .section-subtitle {
-    font-family: $font-text-reblight;
+    font-family: $font-italic;
     margin: 0;
     word-spacing: -3px;
     font-size: 15px;
@@ -79,27 +85,27 @@ ul {
 
 nav {
     font-size: 20px;
-        color: $color-text;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+    color: $color-text;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 
-        a {
-            text-align: center;
-            padding: 15px;
-            font-family: $font-text-thirst;
-            color: $color-main;
-            text-decoration: none;
-            font-size: 30px;
-        }
+    a {
+        text-align: center;
+        padding: 15px;
+        font-family: $font-logo;
+        color: $color-main;
+        text-decoration: none;
+        font-size: 30px;
+    }
 
     ul { 
 
         li {
         padding: 15px;
-        font-family: $font-text-rebmed;
+        font-family: $font-main-medium-weight;
         font-size: 15px;
         cursor: pointer;
         }
@@ -119,11 +125,11 @@ nav {
     .btn {
         color: $color-text;
         border-radius: 3px;
-        padding: 15px 40px 25px 40px;
+        padding: 15px 40px 25px;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 18px;
-        font-family: $font-text-rebmed;
+        font-family: $font-main-medium-weight;
         word-spacing: -6px;
         cursor: pointer;
         position: relative;
@@ -140,7 +146,7 @@ nav {
     left: 50%;
     bottom: 0;
     content: '';
-    background-color: black;
+    background-color: $color-button-hover;
     opacity: 0;
 }
 
@@ -156,14 +162,14 @@ nav {
 
 .first-header {
     font-size: 35px;
-    font-family: $font-text-reb;
+    font-family: $font-main;
     margin: 0;
 }
 
 .second-header {
     font-size: 60px;
     text-transform: uppercase;
-    font-family: $font-text-reb;
+    font-family: $font-main;
     margin-top: 0;
     word-spacing: -1rem;
 }
@@ -182,13 +188,13 @@ nav {
         padding: 10px;
     }
 
-    h1 {
-        font-family: $font-text-reb;
-        word-spacing: -10px;
+    h3 {
+        font-family: $font-main;
+        word-spacing: -5px;
     }
 
     p {
-        font-family: $font-text-lagu_sans;
+        font-family: $font-italic2;
         font-size: 16px;
     }
 }
@@ -200,36 +206,39 @@ nav {
 /* PORFTOLIO */
 
 .portfolio {
-    background-color: #f7f7f7;
+    background-color: $background-color-section;
     padding-bottom: 96px;
-}
 
-.card {
-    text-align: center;
-}
+    .card {
+        text-align: center;
+        padding-bottom: 40px;
+        
+        .card-image {
+            height: 300px;
 
-.card-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
 
-.card-title {
-    font-family: $font-text-reb;
-    word-spacing: -5px;
-}
+            }
+        }
 
-.card-text {
-    font-family: $font-text-lagu_sans;
-}
+        .card-body {
+            height: 150px;
+            background: $color-text;
+            padding: 15px 0;
 
-.card-body {
-    background: $color-text;
-    padding: 15px 0;
-}
+            .card-title {
+                font-family: $font-main;
+                word-spacing: -5px;
+            }
 
-.portfolio-card-border {
-    padding-bottom: 40px;
+            .card-text {
+                font-family: $font-italic2;
+            }
+        }
+    }
 }
 
 /* FOOTER */
@@ -255,18 +264,16 @@ footer ul {
 
     li {
         padding: 15px;
+
+        i {
+        font-size: 30px;
+        color: #00a8ff;
+        opacity: .6;
+        }
     }
 }
 
-footer i {
-    font-size: 30px;
-    color: #00a8ff;
-    opacity: .6;
-}
-
-footer a {
-    display: none;
-}
+/* MEDIA */
 
 @media (max-width: 1164px) {
 
@@ -303,7 +310,7 @@ footer a {
 
         .btn {
             font-size: 15px;
-            padding: 10px;
+            padding: 5px 10px 10px;
         }
     }
 
